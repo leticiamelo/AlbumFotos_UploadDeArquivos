@@ -19,6 +19,9 @@ class PostControlador extends Controller
 
     public function store(Request $request)
     {
+        //informa onde a imagem será salva. No caso abaixo, será salva na pasta storage/app/public/imagens 
+        //e que deve usar o public declarado no arquivo config/filesystems.php
+        //incluir tudo dentro do $path serve para armazenarmos na bd apenas o path(caminho) de onde está salvo a imagem.
         $path = $request->file('arquivo')->store('imagens','public');
 
         $post = new Post();

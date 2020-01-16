@@ -46,6 +46,7 @@
       <section class="jumbotron text-center">
         <div class="container">
           <h1 class="jumbotron-heading">Escreva aqui seu novo Post</h1>
+          <!-- multipart/form-data serve para fazer upload de fotos-->
           <form method="POST" action="/" enctype="multipart/form-data">
             @csrf
             <div class="form-group text-left">
@@ -74,6 +75,7 @@
             @foreach($posts as $post)
                 <div class="col-md-4">
                   <div class="card mb-4 shadow-sm">
+                  <!--src exibindo a imagem que foi feito o upload. Ele pega o nome novo do arquivo que foi gerado-->
                     <img class="card-img-top figure-img img-fluid rounded" src="/storage/{{ $post->arquivo }}">
                     <div class="card-body">
                       <p class="card-text">{{ $post->email }}</p>
